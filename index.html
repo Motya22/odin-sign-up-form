@@ -7,6 +7,131 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="title">Sign-up form for an imaginary service.</h1>
+    <div class="image-block">
+      <div class="image-block__logo logo">
+        <div class="logo__icon">
+          <img src="assets/img/odin-lined.png" alt="Odin logo" />
+        </div>
+        <div class="logo__text">ODIN</div>
+      </div>
+      <p class="image-block__creator">
+        Photo by
+        <a href="https://unsplash.com/@haliewestphoto" target="_blank"
+          >Halie West</a
+        >
+        on <a href="https://unsplash.com/" target="_blank">Unsplash</a>
+      </p>
+    </div>
+    <div class="content">
+      <header class="content__header">
+        <p>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up
+          <i>now</i>
+          to get started.
+        </p>
+        <p>You <i>know</i> you want to.</p>
+      </header>
+      <form
+        action=""
+        method="post"
+        id="sign-up-form"
+        class="content__form form"
+      >
+        <h2 class="form__title">Let's do this!</h2>
+        <div>
+          <label for="first_name"
+            >First Name<strong
+              ><span aria-label="required">*</span></strong
+            ></label
+          >
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            placeholder="Thor"
+            pattern="^[^0-9]+$"
+            title="Please enter a name consisting of letters only."
+            size="30"
+            maxlength="245"
+            required
+          />
+        </div>
+        <div>
+          <label for="last_name"
+            >Last Name<strong
+              ><span aria-label="required">*</span></strong
+            ></label
+          >
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            placeholder="Odinson"
+            pattern="^[^0-9]+$"
+            title="Please enter a name consisting of letters only."
+            required
+          />
+        </div>
+        <div>
+          <label for="email"
+            >Email<strong><span aria-label="required">*</span></strong></label
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="odin@gmail.com"
+            maxlength="100"
+            required
+          />
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="+375 (29) 111-11-11"
+            pattern="^\+375 \((17|29|33|44)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$"
+            title="Please enter the phone number in Belarusian format."
+          />
+        </div>
+        <div>
+          <label for="password"
+            >Password<strong
+              ><span aria-label="required">*</span></strong
+            ></label
+          >
+          <input
+            type="password"
+            name="password"
+            id="password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+            title="Please enter password (UpperCase, LowerCase and Number)."
+            required
+          />
+        </div>
+        <div>
+          <label for="confirm-password"
+            >Confirm Password<strong
+              ><span aria-label="required">*</span></strong
+            ></label
+          >
+          <input
+            type="password"
+            name="confirm-password"
+            id="confirm-password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+            title="Please repeat the password."
+            required
+          />
+        </div>
+      </form>
+      <footer class="content__footer">
+        <button type="submit" form="sign-up-form">Create Account</button>
+        <p>Already have an account? <a href="">Log in</a></p>
+      </footer>
+    </div>
   </body>
 </html>
