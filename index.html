@@ -39,7 +39,7 @@
         class="content__form form"
       >
         <h2 class="form__title">Let's do this!</h2>
-        <div>
+        <div class="form__row">
           <label for="first_name"
             >First Name<strong
               ><span aria-label="required">*</span></strong
@@ -56,8 +56,9 @@
             maxlength="245"
             required
           />
+          <span></span>
         </div>
-        <div>
+        <div class="form__row">
           <label for="last_name"
             >Last Name<strong
               ><span aria-label="required">*</span></strong
@@ -70,10 +71,13 @@
             placeholder="Odinson"
             pattern="^[^0-9]+$"
             title="Please enter a name consisting of letters only."
+            size="30"
+            maxlength="245"
             required
           />
+          <span></span>
         </div>
-        <div>
+        <div class="form__row">
           <label for="email"
             >Email<strong><span aria-label="required">*</span></strong></label
           >
@@ -82,22 +86,26 @@
             name="email"
             id="email"
             placeholder="odin@gmail.com"
+            size="30"
             maxlength="100"
             required
           />
+          <span></span>
         </div>
-        <div>
+        <div class="form__row">
           <label for="phone">Phone Number</label>
           <input
             type="tel"
             name="phone"
             id="phone"
-            placeholder="+375 (29) 111-11-11"
-            pattern="^\+375 \((17|29|33|44)\) [0-9]{3}-[0-9]{2}-[0-9]{2}$"
+            placeholder="+375(29)111-11-11"
+            pattern="^\+375\((17|29|33|44)\)[0-9]{3}-[0-9]{2}-[0-9]{2}$"
             title="Please enter the phone number in Belarusian format."
+            size="30"
           />
+          <span></span>
         </div>
-        <div>
+        <div class="form__row">
           <label for="password"
             >Password<strong
               ><span aria-label="required">*</span></strong
@@ -109,10 +117,13 @@
             id="password"
             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
             title="Please enter password (UpperCase, LowerCase and Number)."
+            size="30"
             required
+            class="password"
           />
+          <span></span>
         </div>
-        <div>
+        <div class="form__row">
           <label for="confirm-password"
             >Confirm Password<strong
               ><span aria-label="required">*</span></strong
@@ -124,8 +135,11 @@
             id="confirm-password"
             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
             title="Please repeat the password."
+            size="30"
             required
+            class="confirm-password"
           />
+          <span></span>
         </div>
       </form>
       <footer class="content__footer">

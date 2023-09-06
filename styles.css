@@ -352,12 +352,194 @@ template {
 
 /* MY STYLES */
 @font-face {
-  font-family: norse;
-  src: url(assets//fonts/Norse-Bold.otf);
+  font-family: norsebold;
+  src: url('./assets/fonts/norse-bold-webfont.woff2') format('woff2'),
+    url('./assets/fonts/norse-bold-webfont.woff') format('woff');
   font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --main-color: #444;
+  --bg-color: #f7f6f6;
+  --marsh-color: #596d48;
+  --light-border-color: #e5e7eb;
+  --blue-border-color: blue;
+  --error-color: #bf0303;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  border: 1px solid var(--light-border-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: 500;
+}
+
+input + span {
+  position: relative;
+}
+input + span::before {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+}
+.password + span::after {
+  content: '';
+  font-size: 14px;
+  color: var(--error-color);
+}
+.password.error + span::after {
+  content: '* Passwords do not match';
+  font-size: 14px;
+  color: var(--error-color);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--blue-border-color);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+input:not(:focus):invalid {
+  border-color: var(--error-color);
+}
+
+input:not(:focus):valid {
+  border-color: green;
+}
+
+input:invalid + span::before {
+  content: '✖';
+  color: var(--error-color);
+}
+input:valid + span::before {
+  content: '✓';
+  color: green;
 }
 
 body {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: var(--main-color);
+  min-height: 100vh;
+  display: flex;
+}
+
+.image-block {
+  flex: 0 0 40%;
+  background: url('assets//img/halie-west-25xggax4bSA-unsplash.jpg') 0% 0% /
+    cover no-repeat;
+  position: relative;
+}
+.image-block__logo {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+}
+
+.logo {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo__icon {
+  flex: 0 0 55px;
+  width: 55px;
+}
+.logo__icon img {
+  max-width: 100%;
+}
+.logo__text {
+  font-family: norsebold;
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+.image-block__creator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+.image-block__creator a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.image-block__creator a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.content {
+  flex: 0 0 60%;
+  background-color: var(--bg-color);
+}
+.content__header {
+  padding: 100px 30px 30px;
+}
+.content__header p {
+  font-weight: 700;
+  font-size: 18px;
+}
+.content__form {
+}
+
+.form {
+  background-color: #fff;
+  padding: 5px 30px 25px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 60px;
+}
+.form__title {
+  flex: 0 0 100%;
+}
+.form__row {
+  display: flex;
+  flex-direction: column;
+}
+.form__row label {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.content__footer {
+  padding: 20px 30px;
+}
+.content__footer p {
+}
+.content__footer p a {
+  font-weight: 500;
+  color: var(--marsh-color);
+  transition: color 0.3s ease 0s;
+}
+
+.content__footer p a:hover {
+  color: #000;
+}
+
+button[type='submit'] {
+  background-color: var(--marsh-color);
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease 0s;
+}
+
+button[type='submit']:hover {
+  cursor: pointer;
+  background-color: #000;
 }
