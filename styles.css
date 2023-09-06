@@ -388,14 +388,14 @@ input + span::before {
   top: -25px;
 }
 .password + span::after {
-  content: '';
-  font-size: 14px;
-  color: var(--error-color);
-}
-.password.error + span::after {
   content: '* Passwords do not match';
   font-size: 14px;
   color: var(--error-color);
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+}
+.password.error + span::after {
+  opacity: 1;
 }
 
 input:focus {
